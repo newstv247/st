@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AMLGM | Approximate Marginal Likelihood for Gaussian Models</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    color:#263238;
+    background:#f8fafc;
+    line-height:1.6;
+}
+
+header{
+    background:#0f172a;
+    color:white;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.hero{
+    padding:90px 0;
+    background:linear-gradient(135deg,#0f172a,#1d4ed8);
+    color:white;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.15rem;
+    opacity:.95;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    margin-right:15px;
+}
+
+.btn-primary{
+    background:#22c55e;
+    color:white;
+}
+
+.btn-secondary{
+    background:white;
+    color:#1d4ed8;
+}
+
+.hero-card{
+    background:white;
+    color:#111827;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.hero-card h3{
+    margin-bottom:20px;
+}
+
+section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#1d4ed8;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.feature{
+    background:#eef4ff;
+    border-left:5px solid #2563eb;
+    padding:25px;
+    border-radius:8px;
+}
+
+.cta{
+    background:#1d4ed8;
+    color:white;
+    text-align:center;
+}
+
+.cta h2{
+    margin-bottom:20px;
+}
+
+footer{
+    background:#111827;
+    color:#cbd5e1;
+    padding:40px 0;
+}
+
+footer a{
+    color:#93c5fd;
+    text-decoration:none;
+}
+
+@media(max-width:900px){
+
+.hero-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:2.3rem;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">AMLGM</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Documentation</a></li>
+<li><a href="#">Examples</a></li>
+<li><a href="#">Publications</a></li>
+<li><a href="#">Download</a></li>
+<li><a href="#">Support</a></li>
+</ul>
+
+</nav>
+
+</div>
+
+<div class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<h1>Approximate Marginal Likelihood for Gaussian Models</h1>
+
+<p>
+AMLGM provides efficient computational tools for approximate marginal
+likelihood estimation and Bayesian inference in Gaussian and latent Gaussian
+models. Built to complement the R-INLA ecosystem with scalable, reproducible,
+and research-oriented workflows.
+</p>
+
+<a class="btn btn-primary" href="#">Get Started</a>
+
+<a class="btn btn-secondary" href="#">View Documentation</a>
+
+</div>
+
+<div class="hero-card">
+
+<h3>Quick Start</h3>
+
+<pre>
+install.packages("INLA")
+
+library(INLA)
+library(amlgm)
+
+result <- amlgm(...)
+summary(result)
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Why AMLGM?</h2>
+
+<p>
+Designed for modern Bayesian statistical modelling.
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Fast</h3>
+<p>
+Efficient numerical approximations for complex Gaussian models without
+computationally intensive sampling.
+</p>
+</div>
+
+<div class="card">
+<h3>Reliable</h3>
+<p>
+Robust estimation procedures suitable for large datasets and
+high-dimensional models.
+</p>
+</div>
+
+<div class="card">
+<h3>Integrated</h3>
+<p>
+Compatible with the R-INLA ecosystem and existing Bayesian workflows.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section style="background:white;">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Key Features</h2>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+<h3>Approximate Marginal Likelihood</h3>
+<p>Efficient computation for model comparison and Bayesian evidence.</p>
+</div>
+
+<div class="feature">
+<h3>Latent Gaussian Models</h3>
+<p>Designed to work naturally with Gaussian latent structures.</p>
+</div>
+
+<div class="feature">
+<h3>Model Diagnostics</h3>
+<p>Posterior summaries, uncertainty estimates, and predictive evaluation.</p>
+</div>
+
+<div class="feature">
+<h3>Open Source</h3>
+<p>Developed for reproducible statistical research.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Start Building Bayesian Models Today</h2>
+
+<p>
+Explore documentation, tutorials, and examples to begin using AMLGM in your
+research.
+</p>
+
+<br>
+
+<a class="btn btn-primary" href="#">Documentation</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<p><strong>AMLGM Project</strong></p>
+
+<p>
+Part of the R-INLA ecosystem for Bayesian computation.
+</p>
+
+<p style="margin-top:10px;">
+© 2026 AMLGM Project
+</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>
